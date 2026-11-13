@@ -11,14 +11,14 @@ Run it only when I ask. Nothing runs on a schedule.
 
 ## Repositories
 
-| Group | Repository | Default branch | Notes |
-|---|---|---|---|
-| Python library | `pysmhi` | `main` | |
-| Python library | `pynordpool` | `main` | |
-| Python library | `pytrafikverket` | `master` | |
-| HA custom integration | `attribute_as_sensor` | `main` | |
-| HA custom integration | `response_as_sensor` | `main` | |
-| Other | `dotfiles` | `main` | Only the files under "All repositories" |
+| Group                 | Repository            | Default branch | Notes                                   |
+| --------------------- | --------------------- | -------------- | --------------------------------------- |
+| Python library        | `pysmhi`              | `main`         |                                         |
+| Python library        | `pynordpool`          | `main`         |                                         |
+| Python library        | `pytrafikverket`      | `master`       |                                         |
+| HA custom integration | `attribute_as_sensor` | `main`         |                                         |
+| HA custom integration | `response_as_sensor`  | `main`         |                                         |
+| Other                 | `dotfiles`            | `main`         | Only the files under "All repositories" |
 
 Sync only the repositories in this table. Add a repository only when I ask.
 
@@ -34,7 +34,7 @@ Sync only the files listed here. Each entry says which repositories get the file
 
 - `.github/labels.yml`: union. It contains every label from every repository.
 - `.github/workflows/labels.yaml`: per repository, the trigger branch.
-- `renovate.json`: union. It contains all rules from all repositories, without `enabledManagers`.
+- `renovate.json`: union. It contains all rules from all repositories, without `enabledManagers`. `dotfiles` also has a custom manager for tool versions in its workflows. Keep it in `dotfiles` only.
 
 ### All Python libraries and HA custom integrations
 
