@@ -75,6 +75,10 @@
   - a bug that a review comment clearly reports and that this PR causes
 - For every other change, ask me first.
 
+## Dependencies
+
+- Before a change adds a new dependency, ask me how to handle it: whether to pin its version, and whether Renovate bumps it. A dependency is, for example, a package, a GitHub Action, a pre-commit hook, or a tool version in a workflow.
+
 ## Review comments
 
 - Check each claim of a bot reviewer (Copilot and others) against the code before you change anything. Some claims are wrong.
