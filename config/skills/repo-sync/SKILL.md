@@ -48,7 +48,7 @@ Sync only the files listed here. Each entry says which repositories get the file
 - `.github/ISSUE_TEMPLATE/bug_report.md`: same, the bug report form. It replaces the libraries' `.github/ISSUE_TEMPLATE.md`.
 - `.github/CONTRIBUTING.md`: per repository, the repository name in the issue and pull request links.
 - `.github/workflows/release-drafter.yaml`: per repository, the trigger branch. The release header with the name and the star and sponsor line is in all repositories. The line with the required Home Assistant version is only where `hacs.json` exists.
-- `.gitignore`: union of all lines.
+- `.gitignore`: same. One Python-based file: the GitHub Python template, with `node_modules/`, `.DS_Store` and the pdm entries. No Visual Studio entries.
 
 ### Python libraries only
 
