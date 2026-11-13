@@ -25,7 +25,7 @@ These rules add to `~/.claude/CLAUDE.md` and to the `AGENTS.md` of the repositor
 
 ## Core development environment
 
-- Branch names: short kebab-case `<integration>-<topic>`, for example `smhi-bronze`. Create new branches from `origin/dev`.
+- Create new branches from `origin/dev`.
 - In a worktree of `/workspaces/core`:
   - Run tests with `uv run --no-sync python3 -m pytest`. Plain `pytest` imports the code of the main checkout.
   - First run `python3 -m script.translations develop --all`. Translations are not in git.

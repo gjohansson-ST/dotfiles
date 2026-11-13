@@ -25,6 +25,7 @@
 
 ## Git
 
+- Name my feature branches `gj-<slug>`, with the slug in kebab-case, for example `gj-fix-readme-file`. For stacked PRs, keep the slug and number the branches after the first one: `gj-fix-readme-file`, `gj-fix-readme-file-02`, `gj-fix-readme-file-03`. This rule wins over skills that name branches differently.
 - Before you use an existing local branch, compare it with `origin/<branch>`. A stale local branch makes the push fail.
 - After a PR is open, never rebase, amend or force-push. Merge the upstream default branch into the PR branch.
 - Merge with `git -c rerere.enabled=false merge ...`. rerere can reapply an old resolution that includes unrelated changes. This rule wins over skills that turn rerere on, such as `gh-stack`.
