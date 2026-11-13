@@ -12,7 +12,7 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # The marketplace is this repository (.claude-plugin/marketplace.json)
 CLAUDE_MARKETPLACE="gjohansson-skills"
-CLAUDE_PLUGINS=(gjohansson gjohansson-gh-stack gjohansson-remove-single-use-functions gjohansson-writing-dot-skills)
+CLAUDE_PLUGINS=(gjohansson gjohansson-gh-stack gjohansson-remove-single-use-functions gjohansson-writing-dot-skills gjohansson-cleanup-unnecessary-variables)
 
 echo -e "${GREEN}Starting dotfiles installation...${NC}"
 
