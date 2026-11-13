@@ -1,0 +1,119 @@
+---
+name: CI
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  DEFAULT_PYTHON: "3.14"
+  PRETTIER_VERSION: "3.10.0"
+  RUFF_VERSION: "0.17.3"
+
+jobs:
+  marketplace:
+    name: Validate marketplace
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: 🏗 Set up Node
+        uses: actions/setup-node@v7.1.0
+        with:
+          node-version: lts/*
+
+      - name: 🏗 Install Claude Code
+        run: npm install --global @anthropic-ai/claude-code
+
+      - name: 🚀 Validate marketplace and plugins
+        run: claude plugin validate .
+
+  install:
+    name: Install
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: 🏗 Set up Node
+        uses: actions/setup-node@v7.1.0
+        with:
+          node-version: lts/*
+
+      - name: 🏗 Install Claude Code
+        run: npm install --global @anthropic-ai/claude-code
+
+      - name: 🚀 Run install.sh twice
+        env:
+          HOME: ${{ runner.temp }}/home
+        run: |
+          mkdir -p "$HOME"
+          bash install.sh
+          bash install.sh
+
+      # install.sh only warns when a plugin step fails
+      - name: ✅ Check that all plugins are installed
+        env:
+          HOME: ${{ runner.temp }}/home
+        run: |
+          installed="$(claude plugin list --json)"
+          for plugin in $(sed -n 's/^CLAUDE_PLUGINS=(\(.*\))$/\1/p' install.sh); do
+            if ! grep -qF "\"id\": \"${plugin}@gjohansson-skills\"" <<< "$installed"; then
+              echo "::error::${plugin} is not installed"
+              exit 1
+            fi
+          done
+
+  prettier:
+    name: Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: 🚀 Run prettier
+        run: npx --yes "prettier@${PRETTIER_VERSION}" --check "**/*.{json,js,md,yml,yaml}"
+
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: 🚀 Run ShellCheck
+        run: shellcheck install.sh
+
+  ruff:
+    name: Ruff
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: 🏗 Set up uv
+        uses: astral-sh/setup-uv@v10.3.3
+        with:
+          python-version: ${{ env.DEFAULT_PYTHON }}
+
+      - name: 🚀 Run ruff linter
+        run: uvx "ruff@${RUFF_VERSION}" check --output-format=github scripts
+
+      - name: 🚀 Run ruff formatter
+        run: uvx "ruff@${RUFF_VERSION}" format --check scripts

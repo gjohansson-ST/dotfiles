@@ -11,14 +11,14 @@ Run it only when I ask. Nothing runs on a schedule.
 
 ## Repositories
 
-| Group | Repository | Default branch | Notes |
-|---|---|---|---|
-| Python library | `pysmhi` | `main` | |
-| Python library | `pynordpool` | `main` | |
-| Python library | `pytrafikverket` | `master` | |
-| HA custom integration | `attribute_as_sensor` | `main` | |
-| HA custom integration | `response_as_sensor` | `main` | |
-| Other | `dotfiles` | `main` | Only the files under "All repositories" |
+| Group                 | Repository            | Default branch | Notes                                   |
+| --------------------- | --------------------- | -------------- | --------------------------------------- |
+| Python library        | `pysmhi`              | `main`         |                                         |
+| Python library        | `pynordpool`          | `main`         |                                         |
+| Python library        | `pytrafikverket`      | `master`       |                                         |
+| HA custom integration | `attribute_as_sensor` | `main`         |                                         |
+| HA custom integration | `response_as_sensor`  | `main`         |                                         |
+| Other                 | `dotfiles`            | `main`         | Only the files under "All repositories" |
 
 Sync only the repositories in this table. Add a repository only when I ask.
 
