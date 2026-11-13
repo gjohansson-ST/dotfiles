@@ -4,8 +4,26 @@
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
   "labels": ["dependencies", "no-stale"],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
   "commitMessagePrefix": "⬆️",
   "packageRules": [
+    {
+      "matchManagers": ["poetry"],
+      "addLabels": ["python"]
+    },
+    {
+      "matchManagers": ["poetry"],
+      "matchDepTypes": ["dev"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchManagers": ["poetry"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
     {
       "matchManagers": ["github-actions"],
       "addLabels": ["github_actions"],
@@ -15,6 +33,15 @@
       "matchManagers": ["github-actions"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["devcontainer"],
+      "addLabels": ["python"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchPackageNames": ["homeassistant", "pytest-homeassistant"],
+      "groupName": "Home Assistant"
     }
   ]
 }
