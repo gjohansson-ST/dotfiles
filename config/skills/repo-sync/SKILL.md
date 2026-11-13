@@ -64,6 +64,7 @@ Sync only the files listed here. Each entry says which repositories get the file
 - `.github/workflows/hassfest.yaml`: same.
 - `.github/workflows/ruff.yaml`: same.
 - `.github/workflows/validate.yml`: same.
+- `.github/workflows/prettier.yaml`: same.
 - `.vscode/launch.json`: same.
 - `.vscode/tasks.json`: same.
 
@@ -94,7 +95,8 @@ For each repository that needs the change:
 1. Read its contributing guide and PR template fresh from the default branch.
 2. Clone it into the scratchpad and create a branch from the default branch. Use the same branch name in each repository.
 3. Make the change, with the per-repository values. Do not touch files that are not listed under "Files".
-4. Commit, push to `origin`, and open the PR with the `maintenance` label. The `pr-labels` check requires a type label.
-5. Watch CI on all PRs until the checks finish. Report the result as one table.
+4. Format the changed JSON, YAML and Markdown files with prettier, in the version the repositories use. The Python libraries and HA custom integrations check this in CI.
+5. Commit, push to `origin`, and open the PR with the `maintenance` label. The `pr-labels` check requires a type label.
+6. Watch CI on all PRs until the checks finish. Report the result as one table.
 
 Do not link the PRs to each other or to other PRs or issues.
