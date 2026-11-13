@@ -90,5 +90,6 @@
 ## Other information
 
 - Use the `gh` CLI to interact with GitHub. I'm @gjohansson-ST on GitHub.
+- In my dotfiles repository (`gjohansson-ST/dotfiles`), keep `README.md` and `SKILLS.md` up to date. When a change adds, removes or renames something there, such as a skill, a plugin, a workflow or a script, update `README.md` in the same PR. For a skill or a plugin, also update `SKILLS.md`.
 - In a dev container, the `code` command can be missing from the PATH. Open files in my editor with `~/.vscode-server/bin/*/bin/remote-cli/code <path>`.
 - In Markdown rendered on GitHub (PR descriptions, comments, issues, etc.), a single newline is rendered as an actual line break. This is off-spec from standard Markdown. So do NOT hard-wrap text to a column width in GitHub Markdown; let paragraphs flow on a single line and only insert newlines where you genuinely want a line break.
