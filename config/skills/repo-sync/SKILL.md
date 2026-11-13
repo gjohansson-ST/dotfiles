@@ -82,8 +82,8 @@ There is no fixed source repository. For each file, the drift report shows the v
 Compare before you change anything:
 
 1. Get the file list of each repository on its default branch: `gh api "repos/gjohansson-ST/<repo>/git/trees/<branch>?recursive=1"`. The blob SHA shows when two files are identical.
-2. Group the shared files by content. Replace the per-repository values first, so they do not show as drift.
-3. Show me the files that differ, with a short diff, and say which differences look accidental (spacing, an old version) and which look intended (a group or repository difference).
+2. Group the shared files by content. Replace the per-repository values first, so they do not show as drift. Different versions are not drift, for example of an action, a package or a pre-commit hook. Renovate bumps them in each repository.
+3. Show me the files that differ, with a short diff, and say which differences look accidental (spacing, a leftover from a copied file) and which look intended (a group or repository difference).
 4. List the shared files that a repository is missing, compared with the other repositories in its group. Add a missing file only when I say so for that repository.
 5. Do not change anything until I say which differences to sync.
 
