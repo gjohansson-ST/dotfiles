@@ -1,0 +1,31 @@
+{
+  "name": "gjohansson-skills",
+  "description": "Agent skills from gjohansson-ST/dotfiles, with external imports pinned to their reviewed commits",
+  "owner": {
+    "name": "G Johansson",
+    "url": "https://github.com/gjohansson-ST"
+  },
+  "plugins": [
+    {
+      "name": "gjohansson",
+      "description": "Skills authored in gjohansson-ST/dotfiles",
+      "source": "./config/skills",
+      "skills": "./"
+    },
+    {
+      "name": "gjohansson-gh-stack",
+      "description": "External import from github/gh-stack",
+      "license": "MIT",
+      "metadata": {
+        "skill": "gh-stack"
+      },
+      "skills": "./",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/github/gh-stack.git",
+        "path": "skills/gh-stack",
+        "sha": "2a49e6751238633db504655d8a8eba3e433e827d"
+      }
+    }
+  ]
+}
