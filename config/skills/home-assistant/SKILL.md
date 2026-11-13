@@ -48,13 +48,10 @@ These rules add to `~/.claude/CLAUDE.md` and to the `AGENTS.md` of the repositor
 ## Pull requests
 
 - Title and first commit: imperative, sentence case, no prefix, no trailing period. They are the same text.
-- Proposed change:
-  - Keep the template's HTML comments.
-  - Start with one sentence that says what changes. Then say why, or what the bug was.
-  - Link where the request came from.
-  - For larger PRs, use **bold** sub-headings such as **Behavior** and **Tests**, and list edge cases and the tests that cover them.
+- Proposed change: the summary follows the 50-word rule in `~/.claude/CLAUDE.md`. Say what changes and why, or what the bug was, and link where the request came from. Keep the template's HTML comments.
+- The breaking change section and the quality scale checklist are template sections, not part of the 50-word summary.
 - Checklist: check "understand", "tested", "local tests", "no commented code", "dev checklist", "perfect PR", "ruff", "generated code reviewed" and "reviewed two other PRs". Check "Tests have been added" only when tests were added.
-- Breaking change section: fill it in for a breaking change. Write it for users: what breaks, how to fix it, why. Remove the section for other changes, as the template allows.
+- Breaking change section: fill it in for a breaking change. Write it for users: what breaks, how to fix it, why. It is published in the release notes, so it can be longer than one line. Remove the section for other changes, as the template allows.
 - Type of change:
   - Removing something from an integration after its deprecation is a breaking change.
   - Removing a core API that nothing in core uses is a code quality change.
@@ -67,7 +64,7 @@ These rules add to `~/.claude/CLAUDE.md` and to the `AGENTS.md` of the repositor
 ### Quality scale PRs
 
 - Fix gaps in separate PRs first.
-- In the description, add a `## <Tier>` checklist of every rule:
+- In the description, after the summary, add a `## <Tier>` checklist of every rule:
   - `- [x] rule - #PR` when a separate PR closes the gap.
   - `- [ ] rule - Exempt as …` for exempt rules.
 - Add the line "Silver, Gold and Platinum rules that are already fulfilled are marked as `done`; the remaining ones are left as `todo` for now."

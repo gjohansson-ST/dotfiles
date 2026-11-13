@@ -56,6 +56,21 @@
         "path": "writing-dot-skills",
         "sha": "423bb10ce36af30a23057951075674f6afaa82cc"
       }
+    },
+    {
+      "name": "gjohansson-cleanup-unnecessary-variables",
+      "description": "External import from timmo001/skills",
+      "license": "Apache-2.0",
+      "metadata": {
+        "skill": "cleanup-unnecessary-variables"
+      },
+      "skills": "./",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/timmo001/skills.git",
+        "path": "cleanup-unnecessary-variables",
+        "sha": "34cab7eed0f76898f52ba645f37e4f99becabccb"
+      }
     }
   ]
 }
