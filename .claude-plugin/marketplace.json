@@ -26,6 +26,36 @@
         "path": "skills/gh-stack",
         "sha": "2a49e6751238633db504655d8a8eba3e433e827d"
       }
+    },
+    {
+      "name": "gjohansson-remove-single-use-functions",
+      "description": "External import from timmo001/skills",
+      "license": "Apache-2.0",
+      "metadata": {
+        "skill": "remove-single-use-functions"
+      },
+      "skills": "./",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/timmo001/skills.git",
+        "path": "remove-single-use-functions",
+        "sha": "34cab7eed0f76898f52ba645f37e4f99becabccb"
+      }
+    },
+    {
+      "name": "gjohansson-writing-dot-skills",
+      "description": "External import from timmo001/skills",
+      "license": "Apache-2.0",
+      "metadata": {
+        "skill": "writing-dot-skills"
+      },
+      "skills": "./",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/timmo001/skills.git",
+        "path": "writing-dot-skills",
+        "sha": "423bb10ce36af30a23057951075674f6afaa82cc"
+      }
     }
   ]
 }
