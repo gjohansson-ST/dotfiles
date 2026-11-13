@@ -43,5 +43,15 @@
       "matchPackageNames": ["homeassistant", "pytest-homeassistant"],
       "groupName": "Home Assistant"
     }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Tool versions in workflow env values, marked with a renovate comment",
+      "managerFilePatterns": ["/^\\.github/workflows/[^/]+\\.ya?ml$/"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-z-]+) depName=(?<depName>\\S+)\\s+[A-Z_]+: \"(?<currentValue>[^\"]+)\""
+      ]
+    }
   ]
 }

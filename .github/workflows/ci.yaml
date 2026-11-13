@@ -12,7 +12,11 @@ permissions:
 
 env:
   DEFAULT_PYTHON: "3.14"
+  # renovate: datasource=npm depName=@anthropic-ai/claude-code
+  CLAUDE_CODE_VERSION: "2.1.323"
+  # renovate: datasource=npm depName=prettier
   PRETTIER_VERSION: "3.10.0"
+  # renovate: datasource=pypi depName=ruff
   RUFF_VERSION: "0.17.3"
 
 jobs:
@@ -31,7 +35,7 @@ jobs:
           node-version: lts/*
 
       - name: 🏗 Install Claude Code
-        run: npm install --global @anthropic-ai/claude-code
+        run: npm install --global "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}"
 
       - name: 🚀 Validate marketplace and plugins
         run: claude plugin validate .
@@ -51,7 +55,7 @@ jobs:
           node-version: lts/*
 
       - name: 🏗 Install Claude Code
-        run: npm install --global @anthropic-ai/claude-code
+        run: npm install --global "@anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}"
 
       - name: 🚀 Run install.sh twice
         env:

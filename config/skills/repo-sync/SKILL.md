@@ -34,7 +34,7 @@ Sync only the files listed here. Each entry says which repositories get the file
 
 - `.github/labels.yml`: union. It contains every label from every repository.
 - `.github/workflows/labels.yaml`: per repository, the trigger branch.
-- `renovate.json`: union. It contains all rules from all repositories, without `enabledManagers`.
+- `renovate.json`: union. It contains all rules from all repositories, without `enabledManagers`. `dotfiles` also has a custom manager for tool versions in its workflows. Keep it in `dotfiles` only.
 
 ### All Python libraries and HA custom integrations
 
