@@ -40,7 +40,8 @@
 ## Tests
 
 - Make sure each new test fails without the fix. Remove the fix temporarily, run the test, then restore the fix.
-- Never run the full test suite on my computer. Run the tests of the changed code. Let CI run the rest.
+- Never run the full test suite on my computer unless I explicitly ask for it. Run the tests of the changed code. Let CI run the rest.
+- If you find a flaky test in a repository that we work on, start a new session to fix it. That session opens a PR that fixes the flaky test. Always open this PR, also in repositories where other work stays on a fork without a PR. The PR description links to the CI log where the test was flaky. Continue with your current task.
 
 ## Pull requests
 
